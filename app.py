@@ -14,10 +14,6 @@ def index():
             session[program] = True
         else:
             session[program] = False
-    if request.method == 'GET':
-        for program in programs:
-            if request.args.get(program) == 'True':
-                session[program] = True
     return render_template('main.html')
 
 
