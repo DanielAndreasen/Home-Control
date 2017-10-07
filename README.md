@@ -14,6 +14,7 @@ This is a python Flask project, and the installation is the usual
 $ git clone https://github.com/DanielAndreasen/Home-Control
 $ cd Home-Control
 $ pip install -r requirements.txt # Alternatively make a virtualenv first
+$ export HC_secret='<a very long string>'  # Alternatively add this to your config file
 $ python app.py
 ```
 Simply open up the localhost at the port indicated after the last command and
