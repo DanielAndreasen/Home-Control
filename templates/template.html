@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Media center</title>
+  </head>
+
+  <body>
+
+    <div class="container-fluid" style="min-hight:100%">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-info alert-dismissible">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">&times;</a>
+              {{message}}
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      {% block body %}
+
+      {% endblock %}
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

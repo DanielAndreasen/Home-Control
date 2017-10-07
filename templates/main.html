@@ -1,0 +1,35 @@
+{% extends "template.html" %}
+
+{% block body %}
+
+  <center>
+    <h1><a href="/">Media center</a></h1>
+
+    {% if session['netflix'] == True %}
+      <a class="btn btn-success" href="/stop/netflix">Stop Netflix</a>
+    {% else %}
+      <a class="btn btn-danger" href="/start/netflix">Start Netflix</a>
+    {% endif %}
+    {% if session['spotify'] == True %}
+      <a class="btn btn-success" href="/stop/spotify">Stop Spotify</a>
+    {% else %}
+      <a class="btn btn-danger" href="/start/spotify">Start Spotify</a>
+    {% endif %}
+    {% if session['thunderbird'] == True %}
+      <a class="btn btn-success" href="/stop/thunderbird">Stop Thunderbird</a>
+    {% else %}
+      <a class="btn btn-danger" href="/start/thunderbird">Start Thunderbird</a>
+    {% endif %}
+    {% if session['ryver'] == True %}
+      <a class="btn btn-success" href="/stop/ryver">Stop Ryver</a>
+    {% else %}
+      <a class="btn btn-danger" href="/start/ryver">Start Ryver</a>
+    {% endif %}
+    {% if session['xed'] == True %}
+      <a class="btn btn-success" href="/stop/xed">Stop xed</a>
+    {% else %}
+      <a class="btn btn-danger" href="/start/xed">Start xed</a>
+    {% endif %}
+  </center>
+
+{% endblock %}
