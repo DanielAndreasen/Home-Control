@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, url_for, request, session
 from program import is_running, start_pgm, stop_pgm
+import time
 import os
 
 app = Flask(__name__)
@@ -29,6 +30,8 @@ def stop(pgm):
     session[pgm] = False
     pgm = 'chrome' if pgm == 'netflix' else pgm
     stop_pgm(pgm)
+    # Make sure the application is closed before redirecting
+    time.sleep(0.5)
     return redirect(url_for('index'))
 
 
